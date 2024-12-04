@@ -20,5 +20,5 @@ curl  http://localhost:8080/minversion
 ### Sample request
 ```bash
 curl -X POST -d '{"version":"2.0.0"}' -H 'Content-Type: application/json' http://localhost:8080/sample
-``
+```
 
