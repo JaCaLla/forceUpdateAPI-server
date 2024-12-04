@@ -26,9 +26,8 @@ struct VersionResponse: Content {
         #if RELEASE
             return versionResponse
         #else
-        //Task { @MainActor in
         return await MainActor.run {
-            if isRunningTests(), let testVersion, CommandLine.arguments.contains("-DUNIT_TESTS") {
+            if isRunningTests(), let testVersion {
                 return testVersion
             } else {
                 return versionResponse
