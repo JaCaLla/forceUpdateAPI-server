@@ -30,10 +30,11 @@ let package = Package(
             ],
             swiftSettings: swiftSettings
         )
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
 
 var swiftSettings: [SwiftSetting] { [
-    .swiftLanguageMode(.v6),
-    .enableUpcomingFeature("StrictConcurrency")
+    .enableUpcomingFeature("DisableOutwardActorInference"),
+    .enableExperimentalFeature("StrictConcurrency"),
 ] }

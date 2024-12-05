@@ -21,7 +21,9 @@ struct VersionResponse: Content {
     #endif
 
     static func current() async -> VersionResponse {
-        let versionResponse = VersionResponse(currentVersion: "2.0.0", minimumVersion: "1.5.0", forceUpdate: false)
+        let versionResponse = VersionResponse(currentVersion: "2.0.0",
+                                              minimumVersion: "1.5.0",
+                                              forceUpdate: true)
         
         #if RELEASE
             return versionResponse

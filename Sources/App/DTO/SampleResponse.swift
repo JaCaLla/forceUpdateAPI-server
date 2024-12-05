@@ -10,4 +10,7 @@ import Vapor
 
 struct SampleResponse: Content {
     let data: String
+    let currentVersion: String
+    let minimumVersion: String
+    let forceUpdate: Bool
 }

@@ -47,7 +47,10 @@ struct MainController: RouteCollection {
             throw Abort(.upgradeRequired) // Version out of valid range
         }
         
-        return SampleResponse(data: "Some data...")
+        return await SampleResponse(data: "Some data...",
+                              currentVersion: VersionResponse.current().currentVersion,
+                              minimumVersion: VersionResponse.current().minimumVersion,
+                              forceUpdate: VersionResponse.current().forceUpdate)
     }
     
     func isVersion(_ version: String, inRange range: (min: String, max: String)) -> Bool {
